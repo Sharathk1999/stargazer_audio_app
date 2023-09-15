@@ -42,11 +42,10 @@ class _ScreenAllSongsState extends State<ScreenAllSongs> {
 
   List<Audio> audioList = allsongsList.map((song) {
     return Audio(
-      song.filePath, // Assuming filePath is the path to the audio file
+      song.filePath,
       metas: Metas(
         title: song.title,
         artist: song.artist,
-        // You can set other metadata fields here
       ),
     );
   }).toList();
@@ -236,10 +235,12 @@ class _ScreenAllSongsState extends State<ScreenAllSongs> {
                                 ),
                                 onTap: () {
                                   // playAudio(allsongsList, index);
-                                  setState(() {
-                                    isVisible = true;
-                                    miniIndex = index;
-                                  });
+                                  setState(
+                                    () {
+                                      isVisible = true;
+                                      miniIndex = index;
+                                    },
+                                  );
                                 },
                               );
                             },
@@ -267,7 +268,6 @@ class _ScreenAllSongsState extends State<ScreenAllSongs> {
                           allSongsList: allsongsList,
                           index: miniIndex,
                           context: context,
-                          // assetsAudioPlayer: assetsAudioPlayer,
                         );
                       },
                     ));

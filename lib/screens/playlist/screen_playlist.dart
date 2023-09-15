@@ -179,6 +179,7 @@ class ScreenPlaylist extends StatelessWidget {
                 await renamePlaylist(
                     index, newName); 
                 Navigator.pop(context); 
+                // ignore: invalid_use_of_protected_member
                 rebuildkey.currentState!.setState(() {});
               },
               child: const Text('Rename'),
@@ -207,7 +208,7 @@ class ScreenPlaylist extends StatelessWidget {
               onPressed: () async {
                 await deletePlaylist(
                     index); 
-                Navigator.pop(context); 
+                // Navigator.pop(context); 
               },
               child: const Text('Delete'),
             ),

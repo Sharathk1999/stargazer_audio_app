@@ -21,7 +21,7 @@ class ScreenIntro extends StatelessWidget {
   }
 
   Widget _buildImageList(List<String> imagePaths, int index,
-      [double width = 300]) {
+      ) {
     if (index >= 0 && index < imagePaths.length) {
       return Image.asset(
         imagePaths[index],

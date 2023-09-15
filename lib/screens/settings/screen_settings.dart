@@ -93,15 +93,19 @@ class ScreenSettings extends StatelessWidget {
               style: GoogleFonts.inconsolata(),
             ),
             trailing: IconButton(
-                onPressed: () async {
-                  try {
-                    const appUrl = 'appurl';
-                    await Share.share(appUrl, subject: "stargazer app");
-                  } on Exception catch (e) {
-                    log(e.toString());
-                  }
-                },
-                icon: const Icon(FontAwesomeIcons.shareNodes)),
+              onPressed: () async {
+                try {
+                  const appUrl =
+                      'https://play.google.com/store/apps/details?id=in.sharath.stargazer_audio';
+                  await Share.share(appUrl, subject: "stargazer app");
+                } on Exception catch (e) {
+                  log(
+                    e.toString(),
+                  );
+                }
+              },
+              icon: const Icon(FontAwesomeIcons.shareNodes),
+            ),
           ),
         ],
       ),
